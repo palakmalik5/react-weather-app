@@ -1,12 +1,13 @@
 .Weather{
     font-family: ariel, san-serif;
-    Border: 3px solid #dadde1;
-    color: rgb(135, 135, 135);
+    Border: 8px double #456999;
+    color: #033E3E;
+    box-shadow: 0px 0px 10px 10px rgb(83, 65, 65);
     padding: 16px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 .Weather h3{
-    color: #878787;
+    color: #033E3E;
     font-size: 30px;
     font-weight: 100;
     line-height: 30px;
