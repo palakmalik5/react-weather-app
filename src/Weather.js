@@ -5,7 +5,7 @@ import WeatherInfo from "./WeatherInfo.js";
 
 export default function Weather(props) {
     const [weatherData, setweatherData] = useState({ready: false});
-    const [city, setCity] = useState(props.defaultcity);
+    const [city, setCity] = useState(props.defaultCity);
    
     function handleResponse(response){
        setweatherData({
@@ -14,7 +14,7 @@ export default function Weather(props) {
          humidity: response.data.main.humidity,
          description: response.data.weather[0].description,
          date: new Date(response.data.dt * 1000),
-         iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+         iconUrl: `https://openweathermap.org/img/wn/$(response.data.weather[0].icon)@2x.png`,
          wind: response.data.wind.speed,
          city: response.data.name,
        });
@@ -32,7 +32,7 @@ export default function Weather(props) {
 
     function search() {
       const apiKey = "4c4354034cf1207d77d642488c56f07c";
-      let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      let apiUrl =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
       axios.get(apiUrl).then(handleResponse);
     }
 
